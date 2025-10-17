@@ -4,15 +4,15 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import static org.testng.Assert.assertNotEquals;
 import static org.testng.AssertJUnit.assertEquals;
 
 
-public class FirstSeleniumTest {
+public class LoginShouldFailTest {
 
     WebDriver driver;
 
@@ -44,6 +44,6 @@ public class FirstSeleniumTest {
     Thread.sleep(2000);
     String actualResult = driver.findElement(By.linkText("Employee Management")).getText();
     String expectedResult = "Employee Management";
-    assertEquals(actualResult , expectedResult);
+    assertNotEquals(actualResult , expectedResult);
     }
 }
